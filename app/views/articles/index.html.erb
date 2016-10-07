@@ -112,8 +112,8 @@
  </style>
   <% @articles.each do |article| %>
     <!-- <tr> -->
-    <div class="article" style="margin-bottom:0.5em">
-      <a href="<%= article_path(article)%>">
+    <div class="article" data-toggle="modal" data-target="#show-<%=article.id%>" style="margin-bottom:0.5em">
+      <a href="#">
        <div class="article-title">
         <span class=" title"><%= article.title %></span>
         <a href="<%=edit_article_path(article) %>" data-toggle="modal" data-target="#<%=article.id%>">
@@ -126,7 +126,27 @@
       <div class=" text-danger article-text" ><%= article.text %></div>
       </a>
       
-</div> 
+</div>
+<div id="show-<%=article.id%>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title"><%= article.title %></h4>
+      </div>
+      <div class="modal-body"><% @article = article%>
+        <%= render :template => 'articles/show' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+      </div>
+      
+
+  </div> 
 <div id="<%=article.id%>" class="modal fade" role="dialog">
   <div class="modal-dialog">
 
