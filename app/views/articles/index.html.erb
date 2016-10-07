@@ -15,14 +15,14 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header mod-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">New Article</h4>
       </div>
       <div class="modal-body"><% @article = Article.new%>
         <%= render 'form' %>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer mod-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -119,7 +119,7 @@
         <a href="<%=edit_article_path(article) %>" data-toggle="modal" data-target="#<%=article.id%>">
         <span class="glyphicon trash-btn pull-right glyphicon-trash"></span>
         </a>
-        <span data-toggle="modal" data-target="#<%=article.id%>" class="glyphicon edit-btn pull-right glyphicon-edit">
+        <span data-toggle="modal" data-target="#<%=article.id%>,#show-<%=article.id%>" class="glyphicon edit-btn pull-right glyphicon-edit">
         </span>
       
       </div>
@@ -132,14 +132,14 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header mod-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title"><%= article.title %></h4>
       </div>
       <div class="modal-body"><% @article = article%>
         <%= render :template => 'articles/show' %>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer mod-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
@@ -152,14 +152,14 @@
 
     <!-- Modal content-->
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header mod-header">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Edit Article</h4>
       </div>
       <div class="modal-body"><% @article = article%>
         <%= render 'form' %>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer mod-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
