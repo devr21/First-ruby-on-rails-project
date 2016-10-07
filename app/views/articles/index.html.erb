@@ -1,0 +1,154 @@
+
+<div class="content">
+<div class="top">
+<h3 class="articles well text-danger">Listing Articles
+<div class="pull-right new-article" data-toggle="modal" data-target="#myModal" style="margin-bottom:1em">
+<!--<%= link_to '+', new_article_path %>-->
+   <a href="#">+</a> 
+</div></h3>
+
+
+</div>
+<!-- Modal -->
+ <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">New Article</h4>
+      </div>
+      <div class="modal-body"><% @article = Article.new%>
+        <%= render 'form' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div> 
+<!--<table class="table table-hover table-responsive">
+ <thead class="">
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+    <th colspan="3"></th>
+  </tr>
+ </thead>
+ <tbody> -->
+ <style>
+ .new-article a{
+    border-radius: 46%;
+    font-size: 24px;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    padding-left: 40%;
+    padding-right: 40%;
+    color: white;
+    margin-top: -1%;
+    background-color: #ffab00;
+    text-decoration: none;
+ }
+ .new-article a:hover{
+  background-color: teal;
+  color:white;
+ }
+ .articles{
+  padding-top: 5%;
+  margin-top: -4%;
+ }
+   .article:hover{
+      box-shadow: 1px 1px 3px 4px #eee;
+      border-radius: 7px;
+      cursor: pointer;
+      background-color: teal;
+   }
+   .article{
+    padding: 3%;
+    margin:0px;
+   }
+   .article a{
+    text-decoration: none;
+   }
+   .article-title{
+    margin-right: 2px
+     border-width:5px; 
+     color:white; 
+    border-bottom-style:outset;
+    border-bottom-color: yellow;
+    font-size: 19px; 
+
+   }
+.title{
+  background-color:teal;
+  border:1px solid teal ;
+  border-radius:4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color:white;
+  font-family: 'PT Sans', sans-serif;
+  }
+  .article-text{
+    max-height: 5%;
+  }
+  .article-text:hover{
+    color:white;
+  }
+  .edit-btn,.trash-btn{
+    color:white;
+    size: 15px;
+  }
+  .edit-btn:hover,.trash-btn:hover{
+    color:#ffab00;
+  }
+  .edit-btn{
+    margin-right: 2%;
+  }
+  .article-text{
+    font-family: 'Archivo Narrow', sans-serif;
+  }
+ </style>
+  <% @articles.each do |article| %>
+    <!-- <tr> -->
+    <div class="article" style="margin-bottom:0.5em">
+      <a href="<%= article_path(article)%>">
+       <div class="article-title">
+        <span class=" title"><%= article.title %></span>
+        <a href="<%=edit_article_path(article) %>" data-toggle="modal" data-target="#<%=article.id%>">
+        <span class="glyphicon trash-btn pull-right glyphicon-trash"></span>
+        </a>
+        <span data-toggle="modal" data-target="#<%=article.id%>" class="glyphicon edit-btn pull-right glyphicon-edit">
+        </span>
+      
+      </div>
+      <div class=" text-danger article-text" ><%= article.text %></div>
+      </a>
+      
+</div> 
+<div id="<%=article.id%>" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Edit Article</h4>
+      </div>
+      <div class="modal-body"><% @article = article%>
+        <%= render 'form' %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+      </div>
+      
+
+  </div>
+    <!-- </tr> -->
+  <% end %>
+ <!--  </tbody>
+</table> -->
+</div>
