@@ -1,13 +1,17 @@
 class UsersController < ApplicationController
-	before_filter :authenticate_user, :only => [ :show]
+	before_filter :authenticate_user, :only => [ :show, :index]
 	def create
 		@user = User.new(parameters)
 
 		if @user.save
-			redirect_to articles_path
-		else
-			redirect_to "sessions#signup"
+			redirect_to root_path
+		else 
+			render :template => 'sessions/signup'
 		end
+	end
+
+	def index
+		@users = User.all
 	end
 
 	def show
