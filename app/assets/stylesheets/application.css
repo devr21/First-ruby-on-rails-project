@@ -13,13 +13,43 @@
  *= require_tree .
  *= require_self
  */
-.articles-header{
-	width:5%;
-	background-color:cyan;
-}
-.articles-footer{
-	width:10%;
-}
-.articles{
-	background-color: magenta;
-}
+.mod-footer,.mod-header{
+    background-color: teal;
+  }
+    .logo a{
+      color:white;
+      font-family: 'Lobster', cursive;
+      font-size:23px;
+      text-decoration: none;
+      text-shadow: 1px 1px 1px yellow;
+    }
+    .nav-bar{
+      background-color: teal;
+    }
+    .links ul li a{
+      color:white;
+    }
+    .links ul li a:hover{
+      color:teal;
+    }
+    .collapse-button{
+      background-color: white;
+      color:teal;
+    }
+    .coll-btn:hover{
+      text-shadow: 1px 1px 1px yellow;
+      cursor:pointer;
+    }
+    .coll-btn{
+      background-color: teal;
+      color: white;
+      
+      height: 38px;
+    }
+    .glyphicon-menu-hamburger{
+      font-size: 20px;
+    }
+    footer{
+      background-color: teal;
+      color: white;
+    }

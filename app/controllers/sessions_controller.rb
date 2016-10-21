@@ -14,6 +14,8 @@ class SessionsController < ApplicationController
     @current_user = User.authenticate(params[:username_or_email],params[:login_password])
     if @current_user
       session[:user_id] = @current_user.id
+      @user = @current_user
+      @user
       redirect_to root_path
     else
       @user = User.new

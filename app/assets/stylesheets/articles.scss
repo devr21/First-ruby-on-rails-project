@@ -1,3 +1,73 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.new-article a{
+    border-radius: 46%;
+    font-size: 24px;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    padding-left: 40%;
+    padding-right: 40%;
+    color: white;
+    margin-top: -1%;
+    background-color: #ffab00;
+    text-decoration: none;
+ }
+ .new-article a:hover{
+  background-color: teal;
+  color:white;
+ }
+ .articles{
+  padding-top: 5%;
+  margin-top: -4%;
+ }
+   .article:hover{
+      box-shadow: 1px 1px 3px 4px #eee;
+      border-radius: 7px;
+      cursor: pointer;
+      background-color: teal;
+   }
+   .article{
+    padding: 3%;
+    margin:0px;
+   }
+   .article a{
+    text-decoration: none;
+   }
+   .article-title{
+    margin-right: 2px;
+     border-width:5px; 
+     color:white; 
+    border-bottom-style:outset;
+    border-bottom-color: yellow;
+    font-size: 19px; 
+
+   }
+.title{
+  background-color:teal;
+  border:1px solid teal ;
+  border-radius:4px;
+  padding-left: 4px;
+  padding-right: 4px;
+  color:white;
+  font-family: 'PT Sans', sans-serif;
+  }
+  .article-text{
+    max-height: 5%;
+  }
+  .article-text:hover{
+    color:white;
+  }
+  .edit-btn,.trash-btn{
+    color:white;
+    size: 15px;
+  }
+  .edit-btn:hover,.trash-btn:hover{
+    color:#ffab00;
+  }
+  .edit-btn{
+    margin-right: 2%;
+  }
+  .article-text{
+    font-family: 'Archivo Narrow', sans-serif;
+  }
